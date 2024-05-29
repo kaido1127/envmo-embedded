@@ -3,13 +3,13 @@
         {
             "name": "ESP-IDF",
             "compilerPath": "D:\\download\\ESP32\\tools\\xtensa-esp-elf\\esp-13.2.0_20230928\\xtensa-esp-elf\\bin\\xtensa-esp32-elf-gcc.exe",
-            "compileCommands": "D:/download/ESP32/envimo/build/compile_commands.json",
+            "compileCommands": "D:/download/ESP32/envmo/build/compile_commands.json",
             "includePath": [
                 "${config:idf.espIdfPath}/components/**",
                 "${config:idf.espIdfPathWin}/components/**",
                 "${config:idf.espAdfPath}/components/**",
                 "${config:idf.espAdfPathWin}/components/**}/**",
-                "${workspaceFolder",
+                "envmo",
                 "D:/download/ESP32/essp_idf/components"
             ],
             "browse": {
@@ -18,7 +18,7 @@
                     "${config:idf.espIdfPathWin}/components",
                     "${config:idf.espAdfPath}/components/**",
                     "${config:idf.espAdfPathWin}/components/**",
-                    "${workspaceFolder}"
+                    "envmo"
                 ],
                 "limitSymbolsToIncludedHeaders": false
             }
