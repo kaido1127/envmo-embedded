@@ -1,0 +1,5 @@
+ip2location (8.6.1) jammy; urgency=medium
+
+  * Initial Release.
+
+ -- IP2Location <support@ip2location.com>  Mon, 14 Nov 2023 15:53:28 +0800

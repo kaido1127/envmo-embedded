@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "D:\\download\\software\\MinGW\\include",
+                "D:\\download\\software\\MinGW\\bin",
+                "D:\\download\\ESP32\\IP2Location-C-Library-master\\libIP2Location"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "D:\\download\\software\\MinGW\\bin\\gcc.exe"
+        }
+    ],
+    "version": 4
+}
