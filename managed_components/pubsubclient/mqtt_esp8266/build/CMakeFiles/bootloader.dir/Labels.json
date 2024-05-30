@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/download/ESP32/envimo/managed_components/pubsubclient-2.8/mqtt_esp8266/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "D:/download/ESP32/envimo/managed_components/pubsubclient-2.8/mqtt_esp8266/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "D:/download/ESP32/envimo/managed_components/pubsubclient-2.8/mqtt_esp8266/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "D:/download/ESP32/envimo/managed_components/pubsubclient-2.8/mqtt_esp8266/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "D:/download/ESP32/envimo/managed_components/pubsubclient-2.8/mqtt_esp8266/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "D:/download/ESP32/envimo/managed_components/pubsubclient-2.8/mqtt_esp8266/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "D:/download/ESP32/envimo/managed_components/pubsubclient-2.8/mqtt_esp8266/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "D:/download/ESP32/envimo/managed_components/pubsubclient-2.8/mqtt_esp8266/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "D:/download/ESP32/envimo/managed_components/pubsubclient-2.8/mqtt_esp8266/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "D:/download/ESP32/envimo/managed_components/pubsubclient-2.8/mqtt_esp8266/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}

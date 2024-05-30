@@ -10,7 +10,8 @@
                 "${config:idf.espAdfPath}/components/**",
                 "${config:idf.espAdfPathWin}/components/**}/**",
                 "envmo",
-                "D:/download/ESP32/essp_idf/components"
+                "D:/download/ESP32/essp_idf/components",
+                "D:/download/ESP32/essp_idf/components/log/include"
             ],
             "browse": {
                 "path": [

@@ -23,8 +23,8 @@
 
 // Update these with values suitable for your network.
 
-const char* ssid = "........";
-const char* password = "........";
+const char* ssid = "2003_5G";
+const char* password = "20032003";
 const char* mqtt_server = "broker.mqtt-dashboard.com";
 
 WiFiClient espClient;

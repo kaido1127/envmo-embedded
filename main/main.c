@@ -10,13 +10,14 @@
 // #include "freertos/task.h"
 // #include "esp_system.h"
 
-#include "esp_http_client.h"
-#include "connect_wifi.h"
+//#include "esp_http_client.h"
+
 // #include "bme280.h"
 // #include "driver/i2c.h"
 // #include "driver/gpio.h"
 // //#include "http.c"
 // #include "pms7003.h"
+#include "connect_wifi.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -65,6 +66,7 @@
 
 #include "../managed_components/mq2/mq2.h"
 #include "bme280.h"
+#include "bmp280.h"
 //#include "../components/mq7/mq7.h"
 //#include "sdcard.h"
 //#include "pms7003.h"
@@ -83,12 +85,15 @@ struct dataSensor_st
     float temperature;
     float pressure;
     float humidity;
+    uint8_t IP;
+    uint8_t MAC_Addr;
+    uint32_t gas;
+    float probability;
     //uint32_t pm1_0;
     //uint32_t pm2_5;
     //uint32_t pm10;
-    uint32_t air_quality;
     // uint32_t gas;
-    float probability;
+   
 };
 struct dataSensor_st dataFromSensor;
 
@@ -171,8 +176,8 @@ static void http_get_task(void *pvParameters)
 
                 ESP_LOGI(TAG, "... connected");
                 freeaddrinfo(res);
-                sprintf(SUBREQUEST, "api_key=DO2CX4XEDTZX1VO8&field1=%.2f&field2=%.2f&field3=%d&field5=%u&field6=%u&field7=%u&field8=%.2f", dataSensorReceiveFromQueue.temperature, dataSensorReceiveFromQueue.humidity, dataSensorReceiveFromQueue.air_quality, dataSensorReceiveFromQueue.pm1_0, dataSensorReceiveFromQueue.pm2_5, dataSensorReceiveFromQueue.pm10, dataSensorReceiveFromQueue.probability);
-                //printf("temp= %.2f,hum= %.2f,air_quality = %d, pm1_0 = %u, pm2_5= %u, pm10= %u, probability = %.2f ", dataSensorReceiveFromQueue.temperature, dataSensorReceiveFromQueue.humidity, dataSensorReceiveFromQueue.air_quality, dataSensorReceiveFromQueue.pm1_0, dataSensorReceiveFromQueue.pm2_5, dataSensorReceiveFromQueue.pm10, dataSensorReceiveFromQueue.probability);
+                sprintf(SUBREQUEST, "api_key=DO2CX4XEDTZX1VO8&field1=%.2f&field2=%.2f&field3=%d&field5=%u&field6=%u&field7=%u&field8=%.2f", dataSensorReceiveFromQueue.temperature, dataSensorReceiveFromQueue.humidity, dataSensorReceiveFromQueue.gas, dataSensorReceiveFromQueue.pm1_0, dataSensorReceiveFromQueue.pm2_5, dataSensorReceiveFromQueue.pm10, dataSensorReceiveFromQueue.probability);
+                //printf("temp= %.2f,hum= %.2f,gas = %d, pm1_0 = %u, pm2_5= %u, pm10= %u, probability = %.2f ", dataSensorReceiveFromQueue.temperature, dataSensorReceiveFromQueue.humidity, dataSensorReceiveFromQueue.gas, dataSensorReceiveFromQueue.pm1_0, dataSensorReceiveFromQueue.pm2_5, dataSensorReceiveFromQueue.pm10, dataSensorReceiveFromQueue.probability);
                 sprintf(REQUEST, "POST /update HTTP/1.1\nHost: api.thingspeak.com\nConection: close\nContent-Type: application/x-www-form-urlencoded\nContent-Length:%d\n\n%s\n", strlen(SUBREQUEST), SUBREQUEST);
                 if (write(s, REQUEST, strlen(REQUEST)) < 0)
                 {
@@ -241,8 +246,8 @@ void readDataFromSensor()
         //pms7003_readData(indoor, &(dataFromSensor.pm1_0), &(dataFromSensor.pm2_5), &(dataFromSensor.pm10));
 
         //vTaskDelay(1000 / portTICK_PERIOD_MS);
-        //mhz14a_getDataFromSensorViaUART(&dataFromSensor.air_quality);
-        ESP_LOGI(__func__, "temp= %.2f, hum = %.2f, pres = %.2f,  air_quality = %u ", dataFromSensor.temperature, dataFromSensor.humidity, dataFromSensor.pressure, dataFromSensor.air_quality);
+        //mhz14a_getDataFromSensorViaUART(&dataFromSensor.gas);
+        ESP_LOGI(__func__, "temp= %.2f, hum = %.2f, pres = %.2f,  gas = %u ", dataFromSensor.temperature, dataFromSensor.humidity, dataFromSensor.pressure, dataFromSensor.gas);
         float DS_fire;
         float DS_noFire;
         float temperatureProbability = (dataFromSensor.temperature - 20) / 65;
@@ -253,16 +258,16 @@ void readDataFromSensor()
         ESP_LOGI(__func__, "Xac Suat temperature = %.2f ", temperatureProbability);
         float humidityProbability = (-dataFromSensor.humidity / 100) + 1;
         ESP_LOGI(__func__, "Xac Suat humidity = %.2f ", humidityProbability);
-        float air_qualityProbability;
-        air_qualityProbability = (float)(dataFromSensor.air_quality - 400) / (5000 - 400);
-        ESP_LOGI(__func__, "Nong Do air_quality = %u ", dataFromSensor.air_quality);
-        ESP_LOGW(__func__, "Xac Suat air_quality = %.2f ", air_qualityProbability);
-        if (air_qualityProbability < 0)
+        float gasProbability;
+        gasProbability = (float)(dataFromSensor.gas - 400) / (5000 - 400);
+        ESP_LOGI(__func__, "Nong Do gas = %u ", dataFromSensor.gas);
+        ESP_LOGW(__func__, "Xac Suat gas = %.2f ", gasProbability);
+        if (gasProbability < 0)
         {
-            air_qualityProbability = 0;
+            gasProbability = 0;
             ESP_LOGI(__func__, "bi gan bang 0");
         }
-        ESP_LOGI(__func__, "Xac Suat air_quality = %.2f ", air_qualityProbability);
+        ESP_LOGI(__func__, "Xac Suat gas = %.2f ", gasProbability);
         /*float dustProbability;
         if (dataFromSensor.pm10 <= 1000)
         {
@@ -276,7 +281,7 @@ void readDataFromSensor()
         DS_fire = (temperatureProbability * humidityProbability) / (1 - (1 - temperatureProbability) * humidityProbability - temperatureProbability * (1 - humidityProbability));
         DS_noFire = 1 - DS_fire;
         ESP_LOGI(__func__,"DS lan 1 = %.2f", DS_fire);
-        DS_fire = (DS_fire * air_qualityProbability) / (1 - (DS_noFire * air_qualityProbability) - DS_fire * (1 - air_qualityProbability));
+        DS_fire = (DS_fire * gasProbability) / (1 - (DS_noFire * gasProbability) - DS_fire * (1 - gasProbability));
         DS_noFire = 1 - DS_fire;
         ESP_LOGI(__func__,"DS lan 2 = %.2f", DS_fire);
        // DS_fire = (DS_fire * dustProbability) / (1 - (DS_noFire * dustProbability) - DS_fire * (1 - dustProbability));
@@ -291,7 +296,7 @@ void readDataFromSensor()
         {
             ESP_LOGI(__func__, "Success to post the data sensor to dataSensorSentToHTTP Queue.");
         }
-        if (dataFromSensor.air_quality > 1000)
+        if (dataFromSensor.gas > 1000)
         {
             if (eTaskGetState(speaker_handle) == eSuspended)
             {
@@ -311,7 +316,7 @@ void readDataFromSensor()
 {
     while (1)
     {
-        if (dataFromSensor.air_quality >= 1000)
+        if (dataFromSensor.gas >= 1000)
         {
             ledc_set_duty(GPIO_OUTPUT_SPEED, LEDC_CHANNEL_0, 0xFF); // 12% duty - play here for your speaker or buzzer 0x7f
             ledc_update_duty(GPIO_OUTPUT_SPEED, LEDC_CHANNEL_0);

@@ -1,0 +1,18 @@
+-- Component directory D:/download/ESP32/essp_idf/components/esp_adc_cal does not contain a CMakeLists.txt file. No component will be added
+-- Component directory D:/download/ESP32/envimo/managed_components/IP2Location-C-Library-master does not contain a CMakeLists.txt file. No component will be added
+-- ccache will be used for faster recompilation
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32
+Manifest files have changed, solving dependencies.
+Using component placed at D:\download\ESP32\envimo\managed_components\espressif__led_strip for dependency espressif/led_strip(^2.4.1), specified in D:/download/ESP32/envimo/main\idf_component.yml
+..Updating lock file at D:\download\ESP32\envimo\dependencies.lock
+Deleting 1 unused components
+ espressif__led_strip
+Processing 1 dependencies:
+[1/1] idf (5.2.1)
+-- Configuring incomplete, errors occurred!
+See also "D:/download/ESP32/envimo/build/CMakeFiles/CMakeOutput.log".
+[0/1] Re-running CMake...
+FAILED: build.ninja 
+D:\Espressif\tools\cmake\3.24.0\bin\cmake.exe --regenerate-during-build -SD:\download\ESP32\envimo -BD:\download\ESP32\envimo\build
