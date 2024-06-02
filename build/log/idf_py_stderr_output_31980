@@ -1,0 +1,42 @@
+CMake Error at D:/download/ESP32/essp_idf/tools/cmake/component.cmake:224 (message):
+  CMake Warning (dev) at build_properties.temp.cmake:8:
+
+    Syntax Warning in cmake code at column 106
+
+  
+
+    Argument not separated from preceding token by whitespace.
+
+  Call Stack (most recent call first):
+
+    D:/download/ESP32/essp_idf/tools/cmake/scripts/component_get_requirements.cmake:3 (include)
+
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+
+  
+
+  CMake Error at
+  D:/Espressif/tools/cmake/3.24.0/share/cmake-3.24/Modules/ExternalProject.cmake:1253
+  (define_property):
+
+    define_property command is not scriptable
+
+  Call Stack (most recent call first):
+
+    D:/download/ESP32/essp_idf/tools/cmake/kconfig.cmake:1 (include)
+    D:/download/ESP32/essp_idf/tools/cmake/idf.cmake:43 (include)
+    D:/download/ESP32/essp_idf/tools/cmake/project.cmake:29 (include)
+    D:/download/ESP32/envmo/managed_components/IP2Location-C-Library-master/CMakeLists.txt:5 (include)
+    D:/download/ESP32/essp_idf/tools/cmake/scripts/component_get_requirements.cmake:107 (include)
+    D:/download/ESP32/essp_idf/tools/cmake/scripts/component_get_requirements.cmake:127 (__component_get_requirements)
+
+  
+
+  
+
+Call Stack (most recent call first):
+  D:/download/ESP32/essp_idf/tools/cmake/build.cmake:578 (__component_get_requirements)
+  D:/download/ESP32/essp_idf/tools/cmake/project.cmake:605 (idf_build_process)
+  CMakeLists.txt:9 (project)
+
+

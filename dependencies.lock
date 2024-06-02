@@ -2,7 +2,7 @@ dependencies:
   espressif__led_strip:
     component_hash: null
     source:
-      path: D:\download\ESP32\envimo\managed_components\espressif__led_strip
+      path: D:\download\ESP32\envmo\managed_components\espressif__led_strip
       type: local
     version: 2.5.3
   idf:
