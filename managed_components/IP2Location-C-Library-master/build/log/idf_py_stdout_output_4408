@@ -1,0 +1,48 @@
+-- IDF_TARGET not set, using default target: esp32
+-- Found Git: D:/Espressif/tools/idf-git/2.43.0/cmd/git.exe (found version "2.43.0.windows.1") 
+-- Component directory D:/download/ESP32/essp_idf/components/aws-iot-device-sdk-embedded-C does not contain a CMakeLists.txt file. No component will be added
+-- Component directory D:/download/ESP32/essp_idf/components/esp_adc_cal does not contain a CMakeLists.txt file. No component will be added
+-- ccache will be used for faster recompilation
+-- The C compiler identification is GNU 13.2.0
+-- The CXX compiler identification is GNU 13.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: D:/Espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: D:/Espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: D:/Espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file D:/download/ESP32/envmo/managed_components/IP2Location-C-Library-master/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of time_t
+-- Check size of time_t - done
+-- Found Python3: D:/Espressif/python_env/idf5.2_py3.11_env/Scripts/python.exe (found version "3.11.2") found components: Interpreter 
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- App "hello_world" version: 8b0355f-dirty
+-- Adding linker script D:/download/ESP32/envmo/managed_components/IP2Location-C-Library-master/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script D:/download/ESP32/essp_idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script D:/download/ESP32/essp_idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script D:/download/ESP32/essp_idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script D:/download/ESP32/essp_idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script D:/download/ESP32/essp_idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script D:/download/ESP32/essp_idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script D:/download/ESP32/essp_idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script D:/download/ESP32/essp_idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip mbedtls mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: D:/download/ESP32/essp_idf/components/app_trace D:/download/ESP32/essp_idf/components/app_update D:/download/ESP32/essp_idf/components/bootloader D:/download/ESP32/essp_idf/components/bootloader_support D:/download/ESP32/essp_idf/components/bt D:/download/ESP32/essp_idf/components/cmock D:/download/ESP32/essp_idf/components/console D:/download/ESP32/essp_idf/components/cxx D:/download/ESP32/essp_idf/components/driver D:/download/ESP32/essp_idf/components/efuse D:/download/ESP32/essp_idf/components/esp-tls D:/download/ESP32/essp_idf/components/esp_adc D:/download/ESP32/essp_idf/components/esp_app_format D:/download/ESP32/essp_idf/components/esp_bootloader_format D:/download/ESP32/essp_idf/components/esp_coex D:/download/ESP32/essp_idf/components/esp_common D:/download/ESP32/essp_idf/components/esp_eth D:/download/ESP32/essp_idf/components/esp_event D:/download/ESP32/essp_idf/components/esp_gdbstub D:/download/ESP32/essp_idf/components/esp_hid D:/download/ESP32/essp_idf/components/esp_http_client D:/download/ESP32/essp_idf/components/esp_http_server D:/download/ESP32/essp_idf/components/esp_https_ota D:/download/ESP32/essp_idf/components/esp_https_server D:/download/ESP32/essp_idf/components/esp_hw_support D:/download/ESP32/essp_idf/components/esp_lcd D:/download/ESP32/essp_idf/components/esp_local_ctrl D:/download/ESP32/essp_idf/components/esp_mm D:/download/ESP32/essp_idf/components/esp_netif D:/download/ESP32/essp_idf/components/esp_netif_stack D:/download/ESP32/essp_idf/components/esp_partition D:/download/ESP32/essp_idf/components/esp_phy D:/download/ESP32/essp_idf/components/esp_pm D:/download/ESP32/essp_idf/components/esp_psram D:/download/ESP32/essp_idf/components/esp_ringbuf D:/download/ESP32/essp_idf/components/esp_rom D:/download/ESP32/essp_idf/components/esp_system D:/download/ESP32/essp_idf/components/esp_timer D:/download/ESP32/essp_idf/components/esp_wifi D:/download/ESP32/essp_idf/components/espcoredump D:/download/ESP32/essp_idf/components/esptool_py D:/download/ESP32/essp_idf/components/fatfs D:/download/ESP32/essp_idf/components/freertos D:/download/ESP32/essp_idf/components/hal D:/download/ESP32/essp_idf/components/heap D:/download/ESP32/essp_idf/components/http_parser D:/download/ESP32/essp_idf/components/idf_test D:/download/ESP32/essp_idf/components/ieee802154 D:/download/ESP32/essp_idf/components/json D:/download/ESP32/essp_idf/components/log D:/download/ESP32/essp_idf/components/lwip D:/download/ESP32/essp_idf/components/mbedtls D:/download/ESP32/essp_idf/components/mqtt D:/download/ESP32/essp_idf/components/newlib D:/download/ESP32/essp_idf/components/nvs_flash D:/download/ESP32/essp_idf/components/nvs_sec_provider D:/download/ESP32/essp_idf/components/openthread D:/download/ESP32/essp_idf/components/partition_table D:/download/ESP32/essp_idf/components/perfmon D:/download/ESP32/essp_idf/components/protobuf-c D:/download/ESP32/essp_idf/components/protocomm D:/download/ESP32/essp_idf/components/pthread D:/download/ESP32/essp_idf/components/sdmmc D:/download/ESP32/essp_idf/components/soc D:/download/ESP32/essp_idf/components/spi_flash D:/download/ESP32/essp_idf/components/spiffs D:/download/ESP32/essp_idf/components/tcp_transport D:/download/ESP32/essp_idf/components/ulp D:/download/ESP32/essp_idf/components/unity D:/download/ESP32/essp_idf/components/usb D:/download/ESP32/essp_idf/components/vfs D:/download/ESP32/essp_idf/components/wear_levelling D:/download/ESP32/essp_idf/components/wifi_provisioning D:/download/ESP32/essp_idf/components/wpa_supplicant D:/download/ESP32/essp_idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/download/ESP32/envmo/managed_components/IP2Location-C-Library-master/build
